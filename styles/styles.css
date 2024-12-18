@@ -328,7 +328,7 @@ main {
     border-radius: 8px;
     backdrop-filter: blur(10px);
     /* Possible fix for the hamburger menu being white on IOS */
-    background: rgba(90, 88, 92, 1);
+    background: var(--glass-bg);
     border: 1px solid rgba(255, 255, 255, 0.1);
 
     z-index: 101;
