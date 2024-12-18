@@ -330,6 +330,12 @@ main {
     /* Possible fix for the hamburger menu being white on IOS */
     background: var(--glass-bg);
     border: 1px solid rgba(255, 255, 255, 0.1);
+
+    z-index: 101;
+}
+
+.hamburger-container {
+    background: transparent;
 }
 
 .bar {
@@ -339,12 +345,17 @@ main {
     background: linear-gradient(45deg, var(--primary-color), #ff69b4);
     transition: all 0.3s ease;
     border-radius: 2px;
+/* Possible fix for the hamburger menu being white on IOS */
+    position: relative;
+    z-index: 102;
 }
 
 @media (max-width: 768px) {
     .hamburger {
         display: block;
         z-index: 101;
+/* Possible fix for the hamburger menu being white on IOS */
+        background: transparent;
     }
 
     .nav-links {
