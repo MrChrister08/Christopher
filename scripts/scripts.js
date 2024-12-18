@@ -2,7 +2,7 @@ const app = {
     init() {
         this.setupEventListeners();
         this.setupScrollAnimation();
-        this.setupHamburgerMenu(); // Add this line
+        this.setupHamburgerMenu();
     },
 
     setupEventListeners() {
