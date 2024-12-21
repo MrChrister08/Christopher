@@ -323,7 +323,7 @@ main {
 .hamburger {
     display: none;
     cursor: pointer;
-    background: transparent;
+    
     padding: 10px;
     border-radius: 8px;
     backdrop-filter: blur(10px);
