@@ -361,7 +361,6 @@ main {
     background: linear-gradient(45deg, var(--primary-color), #ff69b4);
     transition: all 0.3s ease;
     border-radius: 2px;
-/* Possible fix for the hamburger menu being white on IOS */
     position: relative;
     z-index: 102;
 }
@@ -369,7 +368,6 @@ main {
 @media (max-width: 768px) {
     .hamburger {
         display: block;
-/* Possible fix for the hamburger menu being white on IOS */
     }
 
     .nav-links {
