@@ -323,14 +323,11 @@ main {
 .hamburger {
     display: none;
     cursor: pointer;
-    background: transparent;
     padding: 10px;
     border-radius: 8px;
     backdrop-filter: blur(10px);
-    /* Possible fix for the hamburger menu being white on IOS */
-    
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
-
     z-index: 101;
 }
 
