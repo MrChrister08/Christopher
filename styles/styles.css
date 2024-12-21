@@ -320,17 +320,34 @@ main {
 }
 
 /* Hamburger Menu Styles */
+/* ... existing code ... */
 .hamburger {
     display: none;
     cursor: pointer;
     padding: 10px;
     border-radius: 8px;
-    background: rgba(10, 10, 10, 0.1);
+    background: rgba(10, 10, 10, 0.1); /* Set a solid dark background */
     border: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 101;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    position: relative; /* Ensure positioning context */
 }
+
+/* Add a pseudo-element for the blur effect */
+.hamburger::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit; /* Inherit the background color */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Ensure compatibility with iOS */
+    border-radius: 8px; /* Match the border radius */
+    z-index: -1; /* Place behind the hamburger */
+}
+
+/* ... existing code ... */
 
 .hamburger-container {
     position: relative;
