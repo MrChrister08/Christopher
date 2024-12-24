@@ -320,19 +320,34 @@ main {
 }
 
 /* Hamburger Menu Styles */
+/* ... existing code ... */
 .hamburger {
     display: none;
     cursor: pointer;
-    background: transparent;
     padding: 10px;
     border-radius: 8px;
-    backdrop-filter: blur(10px);
-    /* Possible fix for the hamburger menu being white on IOS */
-    background: var(--glass-bg);
+    background: rgba(80, 80, 80); /* Set a solid dark background */
     border: 1px solid rgba(255, 255, 255, 0.1);
-
     z-index: 101;
+    position: relative; /* Ensure positioning context */
 }
+
+/* Add a pseudo-element for the blur effect */
+.hamburger::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit; /* Inherit the background color */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Ensure compatibility with iOS */
+    border-radius: 8px; /* Match the border radius */
+    z-index: -1; /* Place behind the hamburger */
+}
+
+/* ... existing code ... */
 
 .hamburger-container {
     position: relative;
@@ -346,7 +361,6 @@ main {
     background: linear-gradient(45deg, var(--primary-color), #ff69b4);
     transition: all 0.3s ease;
     border-radius: 2px;
-/* Possible fix for the hamburger menu being white on IOS */
     position: relative;
     z-index: 102;
 }
@@ -354,7 +368,6 @@ main {
 @media (max-width: 768px) {
     .hamburger {
         display: block;
-/* Possible fix for the hamburger menu being white on IOS */
     }
 
     .nav-links {
